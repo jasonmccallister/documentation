@@ -1,0 +1,7 @@
+{% extends "_layouts/cp" %}
+
+{% set title = siteName ~ ' Documentation' %}
+
+{% block content %}
+    {{ documentation | markdown }}
+{% endblock %}

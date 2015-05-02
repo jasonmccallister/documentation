@@ -1,0 +1,31 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Path to the markdown file"|t,
+    id: 'pathToMarkdown',
+    name: 'pathToMarkdown',
+    instructions: "Path to the markdown file (this is relative to the documentation plugin path)"|t,
+    placeholder: "markdown/project-name.md",
+    value: settings.pathToMarkdown,
+}) }}
+
+<hr>
+
+{{ forms.lightswitchField({
+    label: "Use Database"|t,
+    id: 'useDatabase',
+    name: 'useDatabase',
+    instructions: "Switch to using the database instead of the markdown file."|t,
+    on: settings.useDatabase,
+}) }}
+
+{{ forms.textareaField({
+    label: "Documentation Markdown"|t,
+    id: 'documentation',
+    name: 'documentation',
+    instructions: "Enter your markdown content to save."|t,
+    value: settings.documentation,
+    rows: '30'
+}) }}
+
+<hr>
