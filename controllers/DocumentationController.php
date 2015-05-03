@@ -14,7 +14,7 @@ class DocumentationController extends BaseController {
 	/**
 	 * Initialize the controller.
 	 */
-	function init()
+	public function init()
 	{
 		$plugin = craft()->plugins->getPlugin('documentation');
 
@@ -44,7 +44,7 @@ class DocumentationController extends BaseController {
 
 		// render the template, pass the markdown!
 		$this->renderTemplate('documentation/index', array(
-			'documentation' => $documentation
+			'documentation' => $documentation,
 		));
 	}
 
@@ -62,7 +62,7 @@ class DocumentationController extends BaseController {
 
 		// can we find the file path?
 		if ($this->settings->pathToMarkdown != '' && file_exists($path)) {
-			return file_get_contents($path . $file);
+			return file_get_contents($path);
 		}
 		else {
 			return file_get_contents($directory . 'README.md');
